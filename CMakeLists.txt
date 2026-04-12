@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 include(FetchContent)
 
-# GLFW
+# ---------------- GLFW ----------------
 FetchContent_Declare(
     glfw
     GIT_REPOSITORY https://github.com/glfw/glfw.git
@@ -13,7 +13,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glfw)
 
-# GLM
+# ---------------- GLM ----------------
 FetchContent_Declare(
     glm
     GIT_REPOSITORY https://github.com/g-truc/glm.git
@@ -21,7 +21,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glm)
 
-# GLAD (локально)
+# ---------------- GLAD ----------------
 add_library(glad
     external/glad/src/glad.c
 )
@@ -30,9 +30,10 @@ target_include_directories(glad PUBLIC
     external/glad/include
 )
 
-# Твой исполняемый файл
+# ---------------- Executable ----------------
 add_executable(SimpleCubesGL
     src/main.cpp
+    src/graphics/shader.cpp
 )
 
 target_include_directories(SimpleCubesGL PRIVATE
@@ -43,8 +44,8 @@ target_link_libraries(SimpleCubesGL PRIVATE
     glfw
     glad
     glm::glm
+    OpenGL::GL
 )
 
-# OpenGL
+# ---------------- OpenGL ----------------
 find_package(OpenGL REQUIRED)
-target_link_libraries(SimpleCubesGL PRIVATE OpenGL::GL)
