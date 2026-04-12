@@ -1,6 +1,7 @@
 #pragma once
 #include "shader.h"
 #include <string>
+#include "Mesh.h"
 #include <Material.h>
 namespace RenderEngine {
 	class Renderer {
@@ -12,7 +13,7 @@ namespace RenderEngine {
         Renderer& operator=(Renderer&&) = delete;
         ~Renderer() = default;
 
-        void draw(const Mesh& mesh, const Material& material);
+        void draw(Mesh& mesh, Material& material);
         void setDepthTest(const bool enable);
         void clear();
         void setViewport(unsigned int width, unsigned int height);

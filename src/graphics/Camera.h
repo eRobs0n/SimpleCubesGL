@@ -26,10 +26,10 @@ namespace RenderEngine
 
     public:
         Camera();
-        void Camera::moveForward(float delta);
-        void Camera::moveRight(float delta);
-        void Camera::moveUp(float delta);
-        void Camera::rotate(float yaw, float pitch);
+        void moveForward(float delta);
+        void moveRight(float delta);
+        void moveUp(float delta);
+        void rotate(float yaw, float pitch);
         glm::mat4 getViewMatrix();
         glm::mat4 getProjectionMatrix(float aspectRatio);
         void updateCameraVectors();

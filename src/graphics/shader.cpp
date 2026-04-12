@@ -1,7 +1,5 @@
 #include "shader.h"
 
-#include "glutils.h"
-
 #include <fstream>
 
 using std::ifstream;

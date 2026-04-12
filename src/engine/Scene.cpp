@@ -62,7 +62,7 @@ namespace Engine
                 continue;
 
             glm::mat4 model = object->transform.getModelMatrix();
-
+            object->material->use();
             object->material->setMatrices(model, view, projection);
 
             m_renderer.draw(*object->mesh, *object->material);

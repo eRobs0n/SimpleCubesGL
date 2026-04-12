@@ -1,5 +1,6 @@
 #pragma once
 #include "shader.h"
+#include <memory>
 namespace RenderEngine
 {
     class Material

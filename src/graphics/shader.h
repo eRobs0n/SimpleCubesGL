@@ -4,7 +4,7 @@
 #pragma warning( disable : 4290 )
 #endif
 #include <glm/glm.hpp>
-#include <glutils.h>
+#include <glad/glad.h>
 
 #include <string>
 #include <map>

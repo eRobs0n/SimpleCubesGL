@@ -1,7 +1,7 @@
 #include "Renderer.h"
+#include "Mesh.h"
 namespace RenderEngine {
-	void Renderer::draw(const Mesh& mesh, const Material& material) {
-		material.use();
+	void Renderer::draw(Mesh& mesh, Material& material) {
 		mesh.bind();
 		if (mesh.isIndexed()) {
 			glDrawElements(GL_TRIANGLES, mesh.getIndexCount(), GL_UNSIGNED_INT, 0);

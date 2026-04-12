@@ -1,5 +1,5 @@
 #include "Material.h"
-#include "glutils.h"
+#include <glad/glad.h>
 
 namespace RenderEngine
 {

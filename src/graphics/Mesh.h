@@ -1,7 +1,8 @@
 #pragma once
 #include <glm/glm.hpp>
 #include <memory>
-#include <Material.h>
+#include <vector>
+#include <string>
 namespace RenderEngine {
     struct Vertex {
         glm::vec3 position;
@@ -10,7 +11,7 @@ namespace RenderEngine {
     };
 
 	class Mesh {
-    private:
+    protected:
         std::vector<Vertex> vertices;
         std::vector<unsigned int> indices;
         unsigned int VAO = 0;
@@ -32,8 +33,8 @@ namespace RenderEngine {
         bool isIndexed() {
             return indexed;
         }
-        int getIndexCount() const { return (GLsizei)indices.size(); }
-        int getVertexCount() const { return (GLsizei)vertices.size(); }
+        int getIndexCount() const { return (unsigned int)indices.size(); }
+        int getVertexCount() const { return (unsigned int)vertices.size(); }
         ~Mesh();
 
 	};
@@ -44,6 +45,7 @@ namespace RenderEngine {
             : Mesh({}, {}, name)
         {
             generateCube();
+            setupMesh();
         }
 
     private:

@@ -37,7 +37,7 @@ namespace RenderEngine
         return viewMatrix;
     }
 
-    glm::mat4 Camera::getProjectionMatrix(float aspectRatio) const
+    glm::mat4 Camera::getProjectionMatrix(float aspectRatio)
     {
         return glm::perspective(glm::radians(fov), aspectRatio, nearPlane, farPlane);
     }

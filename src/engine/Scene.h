@@ -1,6 +1,8 @@
 #pragma once
 #include "Object.h"
 #include "../graphics/Renderer.h"
+#include "Camera.h"
+#include <vector>
 namespace Engine {
     class Scene
     {

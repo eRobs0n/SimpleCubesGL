@@ -1,7 +1,8 @@
 #include "Mesh.h"
+#include <glad/glad.h>
 namespace RenderEngine {
-    Mesh::Mesh(const std::vector<Vertex>& verts, const std::vector<unsigned int>& inds, const std::string& name = "UnnamedMesh")
-        : vertices(verts), indices(inds), material(std::move(mat)), name(meshName)
+    Mesh::Mesh(const std::vector<Vertex>& verts, const std::vector<unsigned int>& inds, const std::string& meshName)
+        : vertices(verts), indices(inds), name(meshName)
     {
         setupMesh();
     }
@@ -66,7 +67,6 @@ namespace RenderEngine {
 
             vertices = std::move(other.vertices);
             indices = std::move(other.indices);
-            material = std::move(other.material);
             name = std::move(other.name);
 
             VAO = other.VAO;
